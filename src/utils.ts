@@ -374,7 +374,7 @@ export async function getProjectId(promptUser = true): Promise<string> {
  * @param {string} type The input file type. (i.e. docs, forms, sheets, slides)
  * @returns The name like "Google Docs".
  */
-function getFileTypeName(type: string) {
+export function getFileTypeName(type: string) {
   const name: { [key: string]: string } = {
     docs: 'Google Doc',
     forms: 'Google Form',
@@ -389,7 +389,7 @@ function getFileTypeName(type: string) {
  * @param {string} type The Apps Script project type. (i.e. docs, forms, sheets, slides)
  * @returns The script type (i.e. "Google Docs Add-on")
  */
-function getScriptTypeName(type: string) {
+export function getScriptTypeName(type: string) {
   const fileType = getFileTypeName(type);
   return fileType ? `${fileType}s Add-on` : type;
 }

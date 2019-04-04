@@ -3,7 +3,8 @@ import { describe, it } from 'mocha';
 const { spawnSync } = require('child_process');
 
 import {
-  CLASP, PROJECT_ID,
+  CLASP,
+  PROJECT_ID,
 } from '../constants';
 
 import {

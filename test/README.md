@@ -16,7 +16,6 @@
 1. Log in: `clasp login`
 1. Rebuild: `sudo npm run build`
 1. Set environmental variables:
-    * `export TRAVIS_PULL_REQUEST=false`
     * `export SCRIPT_ID=1EwE84eZCSBPcaAiJzCnDjmxMVnLQrDyhSKq1oZY6q-3x4BIDHgQefCnL`
     * `export PROJECT_ID=project-id-3961473932623644264`
 1. Test: `npm run test`
