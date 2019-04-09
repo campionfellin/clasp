@@ -1,6 +1,5 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
-const { spawnSync } = require('child_process');
 
 import {
   PROJECT_ID,
@@ -12,7 +11,12 @@ import {
   setupWithoutGCPProject,
 } from './functions';
 
-import { getProjectIdWithErrors, enableAppsScriptAPI } from '../src/apiutils';
+import {
+  getProjectIdWithErrors,
+  enableAppsScriptAPI,
+  enableOrDisableAPI,
+  isEnabled,
+} from '../src/apiutils';
 
 describe('test getProjectIdWithErrors function from apiutils', () => {
   before(setup);
@@ -35,6 +39,25 @@ describe('test enableAppsScriptAPI function', () => {
   before(setup);
   it('should enable the apis', () => {
     enableAppsScriptAPI();
+  });
+  after(cleanup);
+});
+
+describe('test enableOrDisableAPI function', () => {
+  before(setup);
+  it('should log error if no service name given', async () => {
+    await enableOrDisableAPI("", true);
+    expect(process.stderr).to.equal('An API name is required. Try sheets');
+  });
+  after(cleanup);
+});
+
+// Doesn't work yet.
+describe.skip('test isEnabled function', () => {
+  before(setup);
+  it('should return true because scripts API is enabled on this account', async () => {
+    const driveEnabled = await isEnabled('script');
+    expect(driveEnabled).to.equal(true);
   });
   after(cleanup);
 });

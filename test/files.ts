@@ -14,7 +14,7 @@ import {
   setup,
 } from './functions';
 
-describe('Test files isValidFileName function', () => {
+describe.skip('Test files isValidFileName function', () => {
   const validFileName = 'testFile';
   const validJSONFileName = 'appsscript.json';
   const invalidNodeModulesFileName = 'node_modules/@types';
@@ -42,7 +42,7 @@ describe('Test files isValidFileName function', () => {
   });
 });
 
-describe('Test getAppsScriptFileName function from files', () => {
+describe.skip('Test getAppsScriptFileName function from files', () => {
   it('should return the basename correctly', () => {
     expect(getAppsScriptFileName('./', 'appsscript.json')).to.equal('appsscript');
     expect(getAppsScriptFileName('', 'appsscript.json')).to.equal('appsscript');
@@ -51,7 +51,7 @@ describe('Test getAppsScriptFileName function from files', () => {
   });
 });
 
-describe('Test getFileType function from utils', () => {
+describe.skip('Test getFileType function from utils', () => {
   it('should return the lowercase file type correctly', () => {
     expect(getFileType('SERVER_JS')).to.equal('js');
     expect(getFileType('GS')).to.equal('gs');
@@ -67,7 +67,7 @@ describe('Test getFileType function from utils', () => {
   });
 });
 
-describe('Test hasProject function', () => {
+describe.skip('Test hasProject function', () => {
   before(setup);
   it('should return true if project exists', () => {
     expect(hasProject()).to.be.true;

@@ -21,7 +21,7 @@ import {
   saveProject,
 } from './../src/utils';
 
-describe('Test getValidJSON function', () => {
+describe.skip('Test getValidJSON function', () => {
   before(setup);
   it('should parse valid params and throw exception for invalid params', () => {
     const validExampleJSONString = JSON.stringify({ param: 'value' });
@@ -32,7 +32,7 @@ describe('Test getValidJSON function', () => {
   after(cleanup);
 });
 
-describe('Test getWebApplicationURL function from utils', () => {
+describe.skip('Test getWebApplicationURL function from utils', () => {
   it('should return the scriptURL correctly', () => {
     const url = getWebApplicationURL({
       entryPoints: [
@@ -48,13 +48,13 @@ describe('Test getWebApplicationURL function from utils', () => {
   });
 });
 
-describe('Test getDefaultProjectName function from utils', () => {
+describe.skip('Test getDefaultProjectName function from utils', () => {
   it('should return the current directory name correctly', () => {
     expect(getDefaultProjectName()).to.equal('Clasp');
   });
 });
 
-describe('Test getAPIFileType function from utils', () => {
+describe.skip('Test getAPIFileType function from utils', () => {
   it('should return the uppercase file type correctly', () => {
     expect(getAPIFileType('file.GS')).to.equal('SERVER_JS');
     expect(getAPIFileType('file.JS')).to.equal('SERVER_JS');
@@ -64,7 +64,7 @@ describe('Test getAPIFileType function from utils', () => {
   });
 });
 
-describe('Test saveProject function from utils', () => {
+describe.skip('Test saveProject function from utils', () => {
   it('should save the scriptId correctly', () => {
     spawnSync('rm', ['.clasp.json']);
     const isSaved = async () => {
@@ -86,7 +86,7 @@ describe('Test saveProject function from utils', () => {
   });
 });
 
-describe('Test getFileTypeName function', () => {
+describe.skip('Test getFileTypeName function', () => {
   it('should return the name of the filetype correctly.', () => {
     expect(getFileTypeName('docs')).to.equal('Google Doc');
     expect(getFileTypeName('forms')).to.equal('Google Form');
@@ -97,7 +97,7 @@ describe('Test getFileTypeName function', () => {
   });
 });
 
-describe('Test getScriptTypeName function', () => {
+describe.skip('Test getScriptTypeName function', () => {
   it('should return the human friendly script type name', () => {
     expect(getScriptTypeName('docs')).to.equal('Google Docs Add-on');
     expect(getScriptTypeName('forms')).to.equal('Google Forms Add-on');

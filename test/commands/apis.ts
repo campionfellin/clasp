@@ -14,7 +14,7 @@ import {
 
 import { URL } from '../../src/urls';
 
-describe('Test clasp apis functions', () => {
+describe.skip('Test clasp apis functions', () => {
   before(setup);
   it('should list apis correctly', () => {
     const result = spawnSync(

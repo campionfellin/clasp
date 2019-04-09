@@ -9,7 +9,7 @@ import {
   URL,
 } from './../src/urls';
 
-describe('Test URL utils function', () => {
+describe.skip('Test URL utils function', () => {
   it('should create Script URL correctly', () => {
     const expectedUrl = `https://script.google.com/d/${SCRIPT_ID}/edit`;
     expect(URL.SCRIPT(SCRIPT_ID)).to.equal(expectedUrl);
@@ -33,14 +33,14 @@ describe('Test URL utils function', () => {
   });
 });
 
-describe('Test URL helper from utils', () => {
+describe.skip('Test URL helper from utils', () => {
   it('should return the scriptURL correctly', () => {
     const url = URL.SCRIPT('abcdefghijklmnopqrstuvwxyz');
     expect(url).to.equal('https://script.google.com/d/abcdefghijklmnopqrstuvwxyz/edit');
   });
 });
 
-describe('Test extractScriptId function', () => {
+describe.skip('Test extractScriptId function', () => {
   it('should return scriptId correctly', () => {
     expect(extractScriptId(SCRIPT_ID)).to.equal(SCRIPT_ID);
     expect(extractScriptId(URL.SCRIPT(SCRIPT_ID))).to.equal(SCRIPT_ID);

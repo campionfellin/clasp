@@ -16,7 +16,7 @@ import {
 import { URL } from '../../src/urls';
 import { ERROR } from '../../src/utils';
 
-describe('Test clasp clone <scriptId> function', () => {
+describe.skip('Test clasp clone <scriptId> function', () => {
   before(setup);
   it('should clone a project with scriptId correctly', () => {
     cleanup();
@@ -47,7 +47,7 @@ describe('Test clasp clone <scriptId> function', () => {
   after(cleanup);
 });
 
-describe('Test clasp clone function', () => {
+describe.skip('Test clasp clone function', () => {
   before(setup);
   it('should prompt for which script to clone correctly', () => {
     spawnSync('rm', ['.clasp.json']);

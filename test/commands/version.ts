@@ -16,7 +16,7 @@ import {
 
 const { spawnSync } = require('child_process');
 
-describe('Test clasp version function', () => {
+describe.skip('Test clasp version function', () => {
   before(setup);
   let versionNumber = 0;
   it('should prompt for version description', () => {

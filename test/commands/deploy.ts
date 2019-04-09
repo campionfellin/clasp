@@ -11,7 +11,7 @@ import {
   setup,
 } from '../functions';
 
-describe('Test clasp deploy function', () => {
+describe.skip('Test clasp deploy function', () => {
   before(setup);
   // Could fail to to maximum deployments (20)
   // TODO: skip test if at maximum

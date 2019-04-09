@@ -13,7 +13,7 @@ import {
   setup,
 } from '../functions';
 
-describe('Test clasp push function', () => {
+describe.skip('Test clasp push function', () => {
   before(setup);
   it('should push local project correctly', () => {
     fs.writeFileSync('Code.js', TEST_CODE_JS);

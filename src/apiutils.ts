@@ -63,7 +63,7 @@ export async function getProjectIdWithErrors() {
  * @param {string} serviceName The service name.
  * @returns {boolean} True if the service is enabled.
  */
-export async function isEnabled(serviceName: string) {
+export async function isEnabled(serviceName: string): Promise<boolean> {
   const serviceDetails = await serviceUsage.services.get({ name: serviceName });
   return serviceDetails.data.state === 'ENABLED';
 }

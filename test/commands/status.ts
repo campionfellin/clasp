@@ -16,7 +16,7 @@ import {
   setup,
 } from '../functions';
 
-describe('Test clasp status function', () => {
+describe.skip('Test clasp status function', () => {
   before(setup);
   function setupTmpDirectory(filepathsAndContents: Array<{ file: string, data: string }>) {
     fs.ensureDirSync('tmp');

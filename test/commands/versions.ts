@@ -12,7 +12,7 @@ import {
 
 const { spawnSync } = require('child_process');
 
-describe('Test clasp versions function', () => {
+describe.skip('Test clasp versions function', () => {
   before(setup);
   const versionNumber = 0;
   it.skip('should list versions correctly', () => {

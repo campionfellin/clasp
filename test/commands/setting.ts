@@ -14,7 +14,7 @@ import {
 
 import { ERROR } from '../../src/utils';
 
-describe('Test setting function', () => {
+describe.skip('Test setting function', () => {
   before(setup);
   it('should return current setting value', () => {
     const result = spawnSync(

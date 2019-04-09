@@ -13,7 +13,7 @@ import {
 
 const { spawnSync } = require('child_process');
 
-describe('Test variations of clasp help', () => {
+describe.skip('Test variations of clasp help', () => {
   const expectHelp = (variation: string) => {
     const result = spawnSync(
       CLASP, [variation], { encoding: 'utf8' },
@@ -26,7 +26,7 @@ describe('Test variations of clasp help', () => {
   it('should show help for clasp -h', () => expectHelp('-h'));
 });
 
-describe('Test variations of clasp --version', () => {
+describe.skip('Test variations of clasp --version', () => {
   const expectVersion = (variation: string) => {
     const result = spawnSync(
       CLASP, [variation], { encoding: 'utf8' },
@@ -38,7 +38,7 @@ describe('Test variations of clasp --version', () => {
   it('should show version for clasp -v', () => expectVersion('-v'));
 });
 
-describe('Test unknown functions', () => {
+describe.skip('Test unknown functions', () => {
   it('should show version correctly', () => {
     const result = spawnSync(
       CLASP, ['unknown'], { encoding: 'utf8' },
@@ -48,7 +48,7 @@ describe('Test unknown functions', () => {
   });
 });
 
-describe('Test all functions while logged out', () => {
+describe.skip('Test all functions while logged out', () => {
   before(() => {
     if (fs.existsSync(CLASP_PATHS.rcGlobal)) fs.removeSync(CLASP_PATHS.rcGlobal);
     if (fs.existsSync(CLASP_PATHS.rcLocal)) fs.removeSync(CLASP_PATHS.rcLocal);

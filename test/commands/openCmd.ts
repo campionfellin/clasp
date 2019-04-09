@@ -19,7 +19,7 @@ import {
   LOG,
 } from '../../src/utils';
 
-describe('Test clasp open function', () => {
+describe.skip('Test clasp open function', () => {
   before(setup);
   it('should open script correctly', () => {
     const result = spawnSync(

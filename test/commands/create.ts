@@ -14,7 +14,7 @@ import {
 
 import { LOG } from '../../src/utils';
 
-describe('Test clasp create function', () => {
+describe.skip('Test clasp create function', () => {
   before(setup);
   it('should prompt for a project name correctly', () => {
     spawnSync('rm', ['.clasp.json']);
@@ -45,7 +45,7 @@ describe.skip('Test clasp create <title> function', () => {
   });
 });
 
-describe('Test clasp create <parentId> function', () => {
+describe.skip('Test clasp create <parentId> function', () => {
   before(setup);
   it('should not prompt for script types with parentId', () => {
     spawnSync('rm', ['.clasp.json']);

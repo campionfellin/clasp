@@ -23,7 +23,7 @@ import {
   ERROR,
 } from '../../src/utils';
 
-describe('Test clasp login function', () => {
+describe.skip('Test clasp login function', () => {
   before(setup);
   beforeEach(backupSettings);
   afterEach(restoreSettings);

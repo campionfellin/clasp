@@ -16,7 +16,7 @@ import {
 
 import { LOG } from '../../src/utils';
 
-describe('Test clasp run function', () => {
+describe.skip('Test clasp run function', () => {
   before(setup);
   it('should properly run in dev mode', () => {
     const result = spawnSync(

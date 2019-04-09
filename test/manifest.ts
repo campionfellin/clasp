@@ -13,7 +13,7 @@ import {
   isValidRunManifest,
 } from '../src/manifest';
 
-describe('Test getManifest function', () => {
+describe.skip('Test getManifest function', () => {
   before(setup);
   it('should get a valid manifest file correctly', async () => {
     const manifest = await getManifest();
@@ -22,7 +22,7 @@ describe('Test getManifest function', () => {
   after(cleanup);
 });
 
-describe('Test isValidRunManifest function', () => {
+describe.skip('Test isValidRunManifest function', () => {
   it('should validate a manifest with run permissions', async () => {
     setupWithRunManifest();
     expect(await isValidRunManifest()).to.equal(true);
@@ -36,7 +36,7 @@ describe('Test isValidRunManifest function', () => {
   after(cleanup);
 });
 
-describe('Test isValidManifest function', () => {
+describe.skip('Test isValidManifest function', () => {
   before(setup);
   it('should validate a manifest', async () => {
     expect(await isValidManifest()).to.equal(true);

@@ -12,7 +12,7 @@ import {
 
 import { LOG } from '../../src/utils';
 
-describe('Test clasp logs setup', () => {
+describe.skip('Test clasp logs setup', () => {
   before(setupWithoutGCPProject);
   it('should prompt for logs setup', () => {
     const result = spawnSync(
@@ -31,7 +31,7 @@ describe('Test clasp logs setup', () => {
   after(cleanup);
 });
 
-describe('Test clasp logs function', () => {
+describe.skip('Test clasp logs function', () => {
   before(setup);
   it('should get some logs', () => {
     const result = spawnSync(

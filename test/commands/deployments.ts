@@ -11,7 +11,7 @@ import {
   setup,
 } from '../functions';
 
-describe('Test clasp deployments function', () => {
+describe.skip('Test clasp deployments function', () => {
   before(setup);
   it('should list deployments correctly', () => {
     const result = spawnSync(

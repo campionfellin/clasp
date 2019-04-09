@@ -11,7 +11,7 @@ const { spawnSync } = require('child_process');
   setup,
 } from '../functions';
 
-describe('Test clasp pull function', () => {
+describe.skip('Test clasp pull function', () => {
   before(setup);
   it('should pull an existing project correctly', () => {
     const result = spawnSync(
