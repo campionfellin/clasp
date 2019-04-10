@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
+const sinon = require('sinon');
 
 import {
   PROJECT_ID,
@@ -17,6 +18,8 @@ import {
   enableOrDisableAPI,
   isEnabled,
 } from '../src/apiutils';
+
+import { ERROR } from '../src/utils';
 
 describe('test getProjectIdWithErrors function from apiutils', () => {
   before(setup);
@@ -45,9 +48,33 @@ describe('test enableAppsScriptAPI function', () => {
 
 describe('test enableOrDisableAPI function', () => {
   before(setup);
-  it('should log error if no service name given', async () => {
-    await enableOrDisableAPI("", true);
-    expect(process.stderr).to.equal('An API name is required. Try sheets');
+  // tslint:disable-next-line
+  let errorSpy: any;
+  // tslint:disable-next-line
+  let logSpy: any;
+  beforeEach(() => {
+    errorSpy = sinon.spy(console, 'error');
+    logSpy = sinon.spy(console, 'log');
+  });
+  afterEach(() => {
+    errorSpy.restore();
+    logSpy.restore();
+  });
+  it.skip('should log error if no service name given', async () => {
+    const result = await enableOrDisableAPI('', true);
+    expect(errorSpy.calledWith('An API name is required. Try sheets'));
+  });
+  it('should disable drive API', async () => {
+    await enableOrDisableAPI('drive', false);
+    expect(logSpy.calledWith('Disabled drive API'));
+  });
+  it('should enable drive API', async () => {
+    await enableOrDisableAPI('drive', true);
+    expect(logSpy.calledwith('Enabled drive API'));
+  });
+  it.skip('should throw error for non-existent API', async () => {
+    await enableOrDisableAPI('nonExistent', true);
+    expect(errorSpy.calledWith(ERROR.NO_API(true, 'nonExistent')));
   });
   after(cleanup);
 });
